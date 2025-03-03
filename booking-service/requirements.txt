@@ -2,6 +2,6 @@ fastapi
 uvicorn
 SQLAlchemy
 psycopg2
-pika  # For RabbitMQ
-requests  # For making API calls to other services
+pika
+requests
 python-dotenv
