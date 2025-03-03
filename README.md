@@ -1,14 +1,14 @@
 # CS4067-Assgt-EventBooking-i220920-Aashir-Hameed
-# 🎟️ Online Event Booking Platform
+# Online Event Booking Platform
 
-## 📌 Overview
+##  Overview
 The **Online Event Booking Platform** is a **microservices-based system** where users can **browse events, book tickets, make payments, and receive notifications**.
 
 The platform handles:  
-✅ **User authentication**  
-✅ **Event listings & availability**  
-✅ **Ticket booking & payments**  
-✅ **Email/SMS notifications**  
+ **User authentication**  
+ **Event listings & availability**  
+ **Ticket booking & payments**  
+ **Email/SMS notifications**  
 
 This system demonstrates:  
 🔹 **Synchronous & Asynchronous communication**  
@@ -18,7 +18,7 @@ This system demonstrates:
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | **Technology**   | **Usage**             |
 |-----------------|---------------------|
@@ -31,7 +31,7 @@ This system demonstrates:
 
 ---
 
-## 📌 Microservices Architecture
+##  Microservices Architecture
 
 | **Microservice**      | **Functionality**                                      | **Tech Stack**             | **Database**    | **Communication**  |
 |----------------------|------------------------------------------------|--------------------------|---------------|----------------|
@@ -42,9 +42,9 @@ This system demonstrates:
 
 ---
 
-## 🔗 Microservice Communication
+##  Microservice Communication
 
-### ✅ Synchronous Communication (REST API)
+###  Synchronous Communication (REST API)
 | **From**          | **To**             | **Method** | **API Endpoint** |
 |------------------|------------------|-----------|----------------|
 | User Service     | Event Service     | GET       | `/events` (Get event list) |
@@ -52,16 +52,16 @@ This system demonstrates:
 | Booking Service  | Payment Gateway (Mock) | POST | `/payments` (Process payment) |
 | Booking Service  | Event Service     | GET       | `/events/{event_id}/availability` (Check availability) |
 
-### ✅ Asynchronous Communication (RabbitMQ Events)
+###  Asynchronous Communication (RabbitMQ Events)
 | **Publisher (Service Sending Event)** | **Consumer (Service Receiving Event)** | **Event Data** |
 |-------------------------------------|---------------------------------|----------------|
 | Booking Service  | Notification Service | `{ booking_id, user_email, status: "CONFIRMED" }` |
 
 ---
 
-## 📦 Project Setup & Installation
+##  Project Setup & Installation
 
-### 1️⃣ Clone the Repository
+### 1️ Clone the Repository
 ```sh
 git clone https://github.com/Aashir0920/CS4067-Assgt-EventBooking-i220920-Aashir-Hameed.git
 cd CS4067-Assgt-EventBooking-i220920-Aashir-Hameed
@@ -69,7 +69,7 @@ cd CS4067-Assgt-EventBooking-i220920-Aashir-Hameed
 
 ---
 
-### 2️⃣ Set Up Environment Variables
+### 2️ Set Up Environment Variables
 Each microservice requires a **`.env`** file for configuration.
 
 #### **User Service (`user_service/.env`)**
@@ -100,7 +100,7 @@ EMAIL_PASS=your_email_password
 
 ---
 
-### 3️⃣ Install Dependencies
+### 3️ Install Dependencies
 Navigate into each microservice and install dependencies:
 ```sh
 cd user_service
@@ -118,7 +118,7 @@ pip install -r requirements.txt
 
 ---
 
-### 4️⃣ Start Each Microservice
+### 4️ Start Each Microservice
 Run each microservice in a separate terminal:
 
 #### **Start User Service**
@@ -147,10 +147,10 @@ uvicorn main:app --host 0.0.0.0 --port 8004 --reload
 
 ---
 
-## 🐳 Running with Docker
+##  Running with Docker
 Each microservice has a **Dockerfile**, so you can run them in containers.
 
-### 1️⃣ Build Docker Images
+### 1️ Build Docker Images
 ```sh
 docker build -t user-service user_service/
 docker build -t event-service event_service/
@@ -158,7 +158,7 @@ docker build -t booking-service booking_service/
 docker build -t notification-service notification_service/
 ```
 
-### 2️⃣ Run Containers
+### 2️ Run Containers
 ```sh
 docker run -p 8001:8001 user-service
 docker run -p 8002:8002 event-service
@@ -168,7 +168,7 @@ docker run -p 8004:8004 notification-service
 
 ---
 
-## 📄 API Documentation
+##  API Documentation
 Each service provides an **interactive API documentation** at:  
 - **User Service** → `http://localhost:8001/docs`
 - **Event Service** → `http://localhost:8002/docs`
@@ -177,15 +177,13 @@ Each service provides an **interactive API documentation** at:
 
 ---
 
-## 📌 Jira & GitHub Integration
-✅ **Jira Board** created for task management  
-✅ **GitHub Project** with Kanban board for tracking progress  
-✅ **GitHub Issues** linked to Jira for automatic updates  
+##  Jira & GitHub Integration
+ **Jira Board** created for task management  
+ **GitHub Project** with Kanban board for tracking progress  
+ **GitHub Issues** linked to Jira for automatic updates  
 
 ---
 
 
-## 👨‍💻 Contributors
+##  Contributors
 - **Aashir Hameed** (@Aashir0920)  
-
-🚀 **Happy Coding!** 🎉  
