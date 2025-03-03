@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from models import Event, EventUpdate  
-from .database import events_collection
+from database import events_collection
 from bson import ObjectId
 
 router = APIRouter()
