@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from .database import engine, Base
-from .routes import router
+from database import engine, Base
+from routes import router
 
 # Initialize FastAPI App
 app = FastAPI()
